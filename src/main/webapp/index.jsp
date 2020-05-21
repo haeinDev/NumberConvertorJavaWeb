@@ -2,6 +2,7 @@
     Document   : index1
     Created on : 21-May-2020, 13:11:45
     Author     : Haein.Kim
+    Github     :  https://github.com/haeinjane/NumberConvertor
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -10,7 +11,7 @@
 <html>
 
 <head>
-    <title>NumberConvertor Haein Kim 2017133</title>
+    <title>Number Convertor Haein Kim 2017133</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="Numberconvertor.css" rel="stylesheet">
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>

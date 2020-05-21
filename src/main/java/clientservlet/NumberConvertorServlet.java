@@ -43,8 +43,7 @@ public class NumberConvertorServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-    //insert the code number to dollar 
-
+    //this is to prevent the error from ssl
     TrustManager[] trustAllCerts = new TrustManager[]{
         new X509TrustManager() {
                 public java.security.cert.X509Certificate[] getAcceptedIssuers() {
@@ -75,12 +74,12 @@ public class NumberConvertorServlet extends HttpServlet {
     } catch (MalformedURLException e) {
     }
 
-    //number to the words
+
     response.setContentType("text/html;charset=UTF-8");
     try (PrintWriter out = response.getWriter()) {
-
-        RequestDispatcher rdObj = null;
-        rdObj = request.getRequestDispatcher("/index.jsp");
+        //bring the requestdispatcher instance 
+        RequestDispatcher dispatcher = null;
+        dispatcher = request.getRequestDispatcher("/index.jsp");
         String txtNumber = request.getParameter("inputValue");
         
         //calling the method and save the reuslt into each variable 
@@ -102,8 +101,9 @@ public class NumberConvertorServlet extends HttpServlet {
             //send the result value into result element in index.jsp
             request.setAttribute("result", result);
             request.setAttribute("result2", result2);
-            //publish the request
-            rdObj.include(request, response);
+            //publish the request, there are 2ways (forward or include. 
+            // we can use redirect to show the result
+            dispatcher.include(request, response);
         }catch (IOException | ServletException e) {
             out.println("Exception: " + e);
         }
@@ -122,10 +122,15 @@ public class NumberConvertorServlet extends HttpServlet {
  * @throws ServletException if a servlet-specific error occurs
  * @throws IOException if an I/O error occurs
  */
+    //service : the method that runs when method client calls
+    //servlet request: the class to get the request from client (client ->server)
+    //servlet response : the class to response to client (server->client)
+    // need to make sure which one would run between do get or do post or other one then service() will run
+    //if it does not know the method of request(GET/POST) then it calls doGet
 @Override
 protected void doGet(HttpServletRequest request, HttpServletResponse response)
 throws ServletException, IOException {
-
+    doPost(request,response);
 }
 
 /**
