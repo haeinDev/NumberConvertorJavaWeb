@@ -92,12 +92,12 @@ public class NumberConvertorServlet extends HttpServlet {
             String result;
             java.lang.String result2;
             if(txtNumber.equals("0")){
-            result = "The result of converting number to words is "+port.numberToWords(ubiNum);
-            result2= "The result of converting number to dollar is 0 dollar";
+            result = "The result of converting the number to words is "+port.numberToWords(ubiNum);
+            result2= "The result of converting the number to a dollar is 0 dollar";
             
             }else{
-            result = "The result of converting number to words is "+port.numberToWords(ubiNum);
-            result2 = "The result of converting number to dollar is "+port.numberToDollars(dNum);
+            result = "The result of converting the number to words is "+port.numberToWords(ubiNum);
+            result2 = "The result of converting the number to a dollar is "+port.numberToDollars(dNum);
             }
             //send the result value into result element in index.jsp
             request.setAttribute("result", result);

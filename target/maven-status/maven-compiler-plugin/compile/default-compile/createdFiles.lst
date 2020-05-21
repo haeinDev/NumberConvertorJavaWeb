@@ -1,0 +1,8 @@
+com\dataaccess\webservicesserver\NumberToWords.class
+com\dataaccess\webservicesserver\ObjectFactory.class
+com\dataaccess\webservicesserver\NumberToDollars.class
+com\dataaccess\webservicesserver\NumberToWordsResponse.class
+com\dataaccess\webservicesserver\NumberConversionSoapType.class
+com\dataaccess\webservicesserver\package-info.class
+com\dataaccess\webservicesserver\NumberToDollarsResponse.class
+com\dataaccess\webservicesserver\NumberConversion.class
